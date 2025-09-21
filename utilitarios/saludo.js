@@ -10,3 +10,4 @@ saludar=function(){
     mostrarImagen("imgSaludo","./imagenes/saludo.gif");
     mostrarTextoEnCaja("txtNombre"," ");
 }
+
