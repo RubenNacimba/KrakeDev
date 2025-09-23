@@ -114,8 +114,5 @@ limpiar = function () {
     mostrarTexto("lblValorIVA","0.0");
     mostrarTexto("lblTotal","0.0");
      mostrarTexto("lblResumen","0.0");
-
-
-
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
