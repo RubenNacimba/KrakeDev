@@ -17,11 +17,17 @@ calcularPromedioNotas=function(){
     promedio=calcularPromedio(caja1,caja2,caja3);
     //mostrar texto
     mostrarTexto("lblResultado", promedio.toFixed(2));
-    if(promedio>7){
-        mostrarTexto("lblAprobado","APROBADO");
-        mostrarImagen("imgen","goku-goku-happy.gif");
-    } else {
+    if(promedio<5&& promedio>0){
         mostrarTexto("lblAprobado","REPROBADO");
-        mostrarImagen("imgen","reprobado.gif");
+        mostrarImagen("imgen","reprobado1.gif");
+    } else if(promedio>=5 && promedio<=8) {
+        mostrarTexto("lblAprobado","BUEN TRABAJO");
+        mostrarImagen("imgen","goku-goku-happy.gif");
+    } else if(promedio>8& promedio<=10){
+        mostrarTexto("lblAprobado","EXCELENTE");
+        mostrarImagen("imgen","excelente.gif");
+    } else if (promedio<0 || promedio>10){
+        mostrarTexto("lblAprobado","DATOS INCORRECTOS");
+        mostrarImagen("imgen","error.gif");
     }
 }
