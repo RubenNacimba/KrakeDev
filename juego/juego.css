@@ -1,0 +1,98 @@
+/* Fondo general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título principal */
+h2 {
+    color: #2e7d32;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor horizontal */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Secciones individuales */
+.seccion {
+    background-color: #ecee83;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 220px;
+    transition: transform 0.2s;
+}
+
+.seccion:hover {
+    transform: translateY(-2px);
+}
+
+/* Títulos de sección */
+.seccion h4 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+/* Imágenes de selección */
+.seccion img[onclick] {
+    width: 70px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.seccion img[onclick]:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(21, 101, 192, 0.4);
+}
+
+/* Imágenes de resultado */
+#imgJugador,
+#imgComputador {
+    width: 60px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+/* Texto de resultado */
+#lblResultado {
+    font-weight: bold;
+    font-size: 16px;
+    color: #d84315;
+    margin-top: 10px;
+}
+
+/* Puntajes */
+p {
+    font-size: 15px;
+    margin: 5px;
+    color: #424242;
+}
+
+/* Botón */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #43a047;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #388e3c;
+}

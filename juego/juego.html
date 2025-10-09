@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel o Tijera</title>
+    <script src="juego.js" defer></script>
+    <script src="serviciosJuego.js" defer></script>
+    <script src="utilitarios.js" defer></script>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <h2>JUEGA PIEDRA PAPEL O TIJERA</h2>
+
+    <div class="contenedor">
+        <!-- Sección de selección -->
+        <div class="seccion">
+            <h4>Selecciona:</h4>
+            <img src="imagenes/piedra.png" alt="Piedra" onclick="jugar('piedra');">
+            <img src="imagenes/papel.png" alt="Papel" onclick="jugar('papel');">
+            <img src="imagenes/tijera.png" alt="Tijera" onclick="jugar('tijera');">
+        </div>
+
+        <!-- Sección de resultado -->
+        <div class="seccion">
+            <h4>Tu elección:</h4>
+            <img id="imgJugador" src="" alt="Tu elección">
+            <h4>Computador:</h4>
+            <img id="imgComputador" src="" alt="Elección del computador">
+            <h4>Resultado:</h4>
+            <p id="lblResultado"></p>
+        </div>
+
+        <!-- Sección de puntajes -->
+        <div class="seccion">
+            <h4>Puntajes:</h4>
+            <p id="lblPuntosUsuario">Usuario: 0</p>
+            <p id="lblPuntosComputador">Computador: 0</p>
+            <button onclick="limpiar()">NUEVA PARTIDA</button>
+        </div>
+    </div>
+</body>
+</html>
