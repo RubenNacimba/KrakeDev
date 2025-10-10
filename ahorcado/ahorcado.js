@@ -1,9 +1,31 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
-esMayuscula = function (caracter){
+esMayuscula = function (caracter) {
     let ascii = caracter.charCodeAt(0);  //Obtiene el codigo ASCII del caracter usando chatCodeAt(0)
-    if (ascii >=65 && ascii <=90){ //Verifica si el codigo esta entre 65 y 90 (Rango de letras mayusculas A-Z)
+    if (ascii >= 65 && ascii <= 90) { //Verifica si el codigo esta entre 65 y 90 (Rango de letras mayusculas A-Z)
         return true; // Retorna true si el caracter es es una letra mayuscula
-    }else {
+    } else {
         return false; // Retorna false si no esta en el rango de mayuscula
     }
+}
+guardarPalabra = function () {
+    let palabra = recuperarTexto("txtSecreta"); // Recuperar el texto ingresado de la caja de texto (txtSecreta)
+    //Validar que la palabra ingresada tenga examctamente 5 
+    if (palabra.length != 5) {
+        alert("Debe ingresar una palabra de 5 letras"); // muestra aletra si no cumple la longitud
+        return; // sale de la funcion sin continuar
+    }
+    let esValida=true; //Variable para verificar si todos los caracteres son mayusculas
+    for(let i=0;i<palabra.length;i++){ //Recorre cada caracter de la palabra
+        let caracter=palabra.charAt(i); // Extrae el caracter de la posicion 1 actual
+        if (!esMayuscula(caracter)){ //Verifica si el caracter no es mayuscula usando la funcion esMayuscula
+            esValida=false; //Si encuentra uno que no es mayuscula cambia la variable a false
+            break; //Sale del cliclo porque  ya no  es necesario seguir revisando 
+
+        }
+    }
+    if (!esValida){
+        alert("Debe ingresar una palabra de 5 letras mayusculas"); //Muestra alerta indicando que no cumple
+        return; //Sale de la funcion sin guardar
+    }
+    palabraSecreta = palabra; //Guarda la palabra secreta en la variable global palabraSecreta 
 }
