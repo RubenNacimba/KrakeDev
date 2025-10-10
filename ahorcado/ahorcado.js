@@ -1,4 +1,7 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
+let intentos=0;
+let coincidencias=0;
+let errores=0;
 let palabraSecreta = ""; // Variable global para almacenar la palabra secreta
 
 esMayuscula = function (caracter) {
@@ -37,23 +40,71 @@ mostrarLetra = function (letra, posicion){
 }
 validar = function (letra){
     let letrasEncontradas=0;  //Variable local para contar cuantas veces se encuentra la letra en la palabra secreta
-
-    for (let i =0;i<palabraSecreta.length;i++){  //Recorre cada caracter de la palabra secreta
-        let caracter = palabraSecreta.charAt(i); //Estrae el caracter actual  en la posicion i
-        if (caracter===letra){ // Verifica si el caracter coincide con la letra ingresada
-            mostrarLetra(letra, i); //Si coincide, llama a mostrarLetra para mostrarla en la posicion correspondiente
-            letrasEncontradas++; //Incrementa el contador de letras encontradas
+    for (let i=0; i< palabraSecreta.length;i++ ){
+        if (palabraSecreta.charAt(i) === letra){
+            mostrarLetra(letra, i);
+            letrasEncontradas++;
         }
+    }
+    console.log("Letras encontradas:", letrasEncontradas);
+    return letrasEncontradas;
+}
 
-    }
-    // Puedes usar letrasEncontradas para mostrar un mensaje o tomar desiciones
-    console.log("Letras encontradas:"+ letrasEncontradas); //Mostrar en consola cuantas veces se encontro la letra
-}
+
+let letrasUsadas = [];
+
 ingresarLetra = function(){
-    let texto = recuperarTexto("txtletra"); //Recupera letra ingresada
-    if(esMayuscula(texto)){ // verifica si es mayuscula
-        validar(texto); //Invoca validar con la letra
-    }else{
-        alert("SOLO SE ACEPTAN MAYÚSCULAS"); //Muesra alerta si no es mayuscula
+    let letra = recuperarTexto("txtLetra");
+
+    if(letra.length !== 1){
+        alert("Debe ingresar UNA sola letra");
+        return;
+    }
+    if(!esMayuscula(letra)){
+        alert("SOLO SE ACEPTAN MAYUSCULAS");
+        return;
+    }
+    if(letrasUsadas.includes(letra)){
+        alert("Ya ingresaste esa letra");
+        return;
+    }
+
+    letrasUsadas.push(letra);
+    intentos++;
+
+    let encontradas = validar(letra);
+    if(encontradas === 0){
+        errores++;
+        alert("LA LETRA NO ES PARTE DE LA PALABRA");
+        mostrarAhorcado();
+    } else {
+        coincidencias += encontradas;
+    }
+
+    if(coincidencias === 5){
+        mostrarImagen("ahorcadoImagen", "ganador.gif");
+        return;
+    }
+    if(intentos === 10){
+        mostrarImagen("ahorcadoImagen", "gameOver.gif");
+        return;
+    }
+
+    mostrarTextoEnCaja("txtLetra", "");
+    console.log("Intentos:", intentos, "Coincidencias:", coincidencias, "Errores:", errores);
+}
+
+//Función mostrar ahorcado
+mostrarAhorcado = function (){
+    if (errores >=1 && errores <=10 ){
+          let numero = errores.toString().padStart(2, '0'); // convierte 1 → "01"
+        let ruta = "Ahorcado_" + numero + ".png";
+        mostrarImagen("ahorcadoImagen", ruta);
     }
 }
+window.onload = function(){
+    mostrarImagen("ahorcadoImagen", "Ahorcado_01.png");
+}
+
+
+
