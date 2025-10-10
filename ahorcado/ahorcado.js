@@ -29,3 +29,7 @@ guardarPalabra = function () {
     }
     palabraSecreta = palabra; //Guarda la palabra secreta en la variable global palabraSecreta 
 }
+mostrarLetra = functio (letra, posicion){
+    let id = "div" + posicion; //Construye el id del componente usando la posicion (ej: div0, div1, etc)
+    mostrarTexto(id,letra); //Muestra la letra en el componente correspondiente usando mostrarTexto
+}
