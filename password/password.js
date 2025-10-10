@@ -9,8 +9,6 @@ ejecutarValidacion = function (){
     }
 }
 
-
-
 validarPassword = function(password){
     console.log("Inicializando validacion de password");
     //Variable para acumular los mensajes de error

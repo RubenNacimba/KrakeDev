@@ -1,4 +1,6 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
+let palabraSecreta = ""; // Variable global para almacenar la palabra secreta
+
 esMayuscula = function (caracter) {
     let ascii = caracter.charCodeAt(0);  //Obtiene el codigo ASCII del caracter usando chatCodeAt(0)
     if (ascii >= 65 && ascii <= 90) { //Verifica si el codigo esta entre 65 y 90 (Rango de letras mayusculas A-Z)
@@ -29,7 +31,7 @@ guardarPalabra = function () {
     }
     palabraSecreta = palabra; //Guarda la palabra secreta en la variable global palabraSecreta 
 }
-mostrarLetra = functio (letra, posicion){
+mostrarLetra = function (letra, posicion){
     let id = "div" + posicion; //Construye el id del componente usando la posicion (ej: div0, div1, etc)
     mostrarTexto(id,letra); //Muestra la letra en el componente correspondiente usando mostrarTexto
 }
@@ -46,4 +48,12 @@ validar = function (letra){
     }
     // Puedes usar letrasEncontradas para mostrar un mensaje o tomar desiciones
     console.log("Letras encontradas:"+ letrasEncontradas); //Mostrar en consola cuantas veces se encontro la letra
+}
+ingresarLetra = function(){
+    let texto = recuperarTexto("txtletra"); //Recupera letra ingresada
+    if(esMayuscula(texto)){ // verifica si es mayuscula
+        validar(texto); //Invoca validar con la letra
+    }else{
+        alert("SOLO SE ACEPTAN MAYÚSCULAS"); //Muesra alerta si no es mayuscula
+    }
 }
