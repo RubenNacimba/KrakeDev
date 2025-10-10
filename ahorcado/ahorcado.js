@@ -33,3 +33,17 @@ mostrarLetra = functio (letra, posicion){
     let id = "div" + posicion; //Construye el id del componente usando la posicion (ej: div0, div1, etc)
     mostrarTexto(id,letra); //Muestra la letra en el componente correspondiente usando mostrarTexto
 }
+validar = function (letra){
+    let letrasEncontradas=0;  //Variable local para contar cuantas veces se encuentra la letra en la palabra secreta
+
+    for (let i =0;i<palabraSecreta.length;i++){  //Recorre cada caracter de la palabra secreta
+        let caracter = palabraSecreta.charAt(i); //Estrae el caracter actual  en la posicion i
+        if (caracter===letra){ // Verifica si el caracter coincide con la letra ingresada
+            mostrarLetra(letra, i); //Si coincide, llama a mostrarLetra para mostrarla en la posicion correspondiente
+            letrasEncontradas++; //Incrementa el contador de letras encontradas
+        }
+
+    }
+    // Puedes usar letrasEncontradas para mostrar un mensaje o tomar desiciones
+    console.log("Letras encontradas:"+ letrasEncontradas); //Mostrar en consola cuantas veces se encontro la letra
+}
