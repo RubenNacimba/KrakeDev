@@ -34,5 +34,10 @@ recuperarFloat = function(idComponente){
     let valorFlotante = parseFloat(valorCaja);
     return valorFlotante;
  }
+recuperarTextoDeDiv = function(idComponente){
+    let componente = document.getElementById(idComponente);
+    return componente.innerText;
+}
+
 
 
