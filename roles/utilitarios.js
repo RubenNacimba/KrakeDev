@@ -50,3 +50,7 @@ deshabilitarComponente = function(idComponente){
 habilitarComponente = function(idComponente){
     document.getElementById(idComponente).disabled = false;
 }
+function escribirTexto(id, valor) {
+    document.getElementById(id).value = valor;
+}
+

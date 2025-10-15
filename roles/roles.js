@@ -140,12 +140,64 @@ guardar= function(){
         if(agregado){
             mostrarTexto("lblErrorBusquedaEmpleado","EMPLEADO GUARDADO CORRECTAMENTE");
             mostrarEmpleados(); //Actualizar la tabla
+            deshabilitarCamposEmpleado(); //Solo si se guardo
         } else{
-            mostrarTexto("lblErrorBusquedaEmpleado", "YA EXISTE UN EMPLEADO CON LA CÉDULA"+cedula);
+            mostrarTexto("lblErrorBusquedaEmpleado", "YA EXISTE UN EMPLEADO CON LA CÉDULA" + cedula);
         }
     }
-    //Deshabilitar campos después de guardar
+}
+ejecutarBusquedaEmpleo= function(){
+    //1. Recuperar la cedula desde la caja de busqueda
+    let cedulaBuscada = recuperarTexto("txtBusquedaCedula");
+    // Buscar el empleado en el arreglo
+    let empleado= buscarEmpleado(cedulaBuscada);
+    // si no existe, mostrar alerta
+    if(empleado=== null){
+        alert("Empleado no existe");
+        return;
+    }
+    // Si existe, mostrar sus datos en las cajas
+    escribirTexto("txtCedula", empleado.cedula);
+    escribirTexto("txtNombre", empleado.nombre);
+    escribirTexto("txtApellido", empleado.apellido);
+    escribirTexto("txtSueldo", empleado.sueldo);
+    // habilitar campos para edicion (excepto cedula)
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
+
+    deshabilitarComponente("txtCedula"); // no se puede cambiar la cedula
+    // marcar que no es nuevo
+    esNuevo= false;
+}
+modificarEmpleado= function(empleadoModificado){
+    for(let i=0; i < empleados.length;i++){
+        if(empleados[i].cedula === empleadoModificado.cedula){
+            empleados[i].nombre=== empleadoModificado.nombre;
+            empleados[i].apellido=== empleadoModificado.apellido;
+            empleados[i].sueldo=== empleadoModificado.sueldo;
+            return true;
+        }
+    }
+    return false;
+}
+limpiar = function(){
+     escribirTexto("txtCedula", "");
+    escribirTexto("txtNombre", "");
+    escribirTexto("txtApellido", "");
+    escribirTexto("txtSueldo", "");
+    escribirTexto("txtBusquedaCedula", "");
+
+    mostrarTexto("lblErrorCedula", "");
+    mostrarTexto("lblErrorNombre", "");
+    mostrarTexto("lblErrorApellido", "");
+    mostrarTexto("lblErrorSueldo", "");
+    mostrarTexto("lblErrorBusquedaEmpleado", "");
+
+    esNuevo = false;
     deshabilitarCamposEmpleado();
+
 }
 
 
