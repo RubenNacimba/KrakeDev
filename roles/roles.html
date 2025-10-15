@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <script src="roles.js"></script>
     <script src="utilitarios.js"></script>
-    <link  rel="stylesheet" href="roles.css">
+    <link rel="stylesheet" href="roles.css">
 
 </head>
 
-<body onload="mostrarOpcionEmpleado()">
+<body onload="mostrarOpcionRol()">
     <div class="menu">
         <div class="contenedorBoton">
-            <input type="button" value="EMPLEADO" class="estiloBoton" onclick="mostrarOpcionEmpleado();"  />
+            <input type="button" value="EMPLEADO" class="estiloBoton" onclick="mostrarOpcionEmpleado();" />
         </div>
         <div class="contenedorBoton">
-            <input type="button" value="ROL" class="estiloBoton" onclick="mostrarOpcionRol();"/>
+            <input type="button" value="ROL" class="estiloBoton" onclick="mostrarOpcionRol();" />
         </div>
         <div class="contenedorBoton">
             <input type="button" value="RESUMEN" class="estiloBoton" onclick="mostrarOpcionResumen();" />
@@ -78,7 +78,7 @@
                 </div>
                 <div class="botones">
                     <div class="contenedorBoton">
-                        <input type="button" value="NUEVO" class="estiloBoton" onclick="ejecutarNuevo();"  />
+                        <input type="button" value="NUEVO" class="estiloBoton" onclick="ejecutarNuevo();" />
                     </div>
                     <div class="contenedorBoton">
                         <input type="button" value="GUARDAR" class="estiloBoton" id="btnGuardar" onclick="guardar();" />
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <div class="contenedorBoton">
-                    <input type="button" value="BUSCAR" class="estiloBoton" onclick="ejecutaBusquedaRol();"/>
+                    <input type="button" value="BUSCAR" class="estiloBoton" onclick="buscarPorRol();" />
                 </div>
             </div>
 
@@ -140,6 +140,11 @@
                         <div class="info" id="infoSueldo"></div>
                     </div>
                 </div>
+
+               
+
+
+
                 <div class="ingresoDatos">
                     <div class="tituloCampo">
                         DESCUENTOS
@@ -151,7 +156,7 @@
                 </div>
                 <div class="botones">
                     <div class="contenedorBoton">
-                        <input type="button" value="CALCULAR" class="estiloBoton" onclick="caluclarRol" />
+                        <input type="button" value="CALCULAR" class="estiloBoton" onclick="calcularRol();" />
                     </div>
                 </div>
                 <div class="ingresoDatos">
@@ -186,7 +191,7 @@
     <div id="divResumen">
         <div class="principal">
             <div class="area">
-              
+
             </div>
             <div class="area">
                 <div id="tablaResumen" class="areaTabla">

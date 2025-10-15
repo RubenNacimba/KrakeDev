@@ -197,7 +197,50 @@ limpiar = function(){
 
     esNuevo = false;
     deshabilitarCamposEmpleado();
-
 }
+buscarPorRol = function() {
+    let cedula = recuperarTexto("txtBusquedaCedulaRol");
+    let empleado = buscarEmpleado(cedula);
+
+    if (empleado == null) {
+        alert("EMPLEADO NO EXISTE");
+        return;
+    }
+
+    mostrarTexto("infoCedula", empleado.cedula);
+    mostrarTexto("infoNombre", empleado.nombre + " " + empleado.apellido);
+    mostrarTexto("infoSueldo", empleado.sueldo.toFixed(2));
+}
+
+calcularAporteEmpleado = function(sueldo) {
+    return sueldo * 0.0945;
+}
+
+calcularValorAPagar = function(sueldo, aporte, descuento) {
+    return sueldo - aporte - descuento;
+}
+
+calcularRol = function() {
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let descuento = recuperarFloat("txtDescuentos");
+
+    let valido = true;
+
+    if (isNaN(descuento) || descuento < 0 || descuento >= sueldo) {
+        mostrarTexto("lblErrorDescuentos", "Descuento inválido");
+        valido = false;
+    } else {
+        mostrarTexto("lblErrorDescuentos", "");
+    }
+
+    if (!valido) return;
+
+    let aporte = calcularAporteEmpleado(sueldo);
+    mostrarTexto("infoIESS", aporte.toFixed(2));
+
+    let total = calcularValorAPagar(sueldo, aporte, descuento);
+    mostrarTexto("infoPago", total.toFixed(2));
+}
+
 
 

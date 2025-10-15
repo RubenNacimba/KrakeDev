@@ -54,3 +54,21 @@ function escribirTexto(id, valor) {
     document.getElementById(id).value = valor;
 }
 
+recuperarTextoDiv = function(idComponente){
+    let componente = document.getElementById(idComponente);
+    if (!componente) {
+        console.error(`⚠️ No se encontró el componente con id="${idComponente}"`);
+        return "";
+    }
+    return componente.textContent;
+}
+
+recuperarFloatDiv = function(idComponente){
+    let texto = recuperarTextoDiv(idComponente);
+    return parseFloat(texto);
+}
+
+recuperarIntDiv = function(idComponente){
+    let texto = recuperarTextoDiv(idComponente);
+    return parseInt(texto);
+}
