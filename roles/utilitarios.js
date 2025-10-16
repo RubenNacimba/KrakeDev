@@ -4,11 +4,22 @@ mostrarImagen=function(idComponente,rutaImagen){
     componente=document.getElementById(idComponente);
     componente.src =  rutaImagen;
 }
-mostrarTexto=function(idComponente,mensaje){
-    let componente;
-    componente=document.getElementById(idComponente);
-    componente.innerText = mensaje;
+
+
+mostrarTexto = function(id, texto) {
+    let componente = document.getElementById(id);
+    if (componente) {
+        componente.innerText = texto;
+    } else {
+        console.warn(`⚠️ No se encontró el componente con id="${id}"`);
+    }
 }
+
+
+
+
+
+
 mostrarTextoEnCaja = function(idComponente,mensaje){
     let componente;
     componente=document.getElementById(idComponente);
