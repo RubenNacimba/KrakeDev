@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <meta charset="UTF-8">
+    <script src="placas.js"></script>
+    <script src="serviciosPlacas.js"></script>
+    <script src="utilitarios.js"></script>
+    <link rel="stylesheet" href="placa.css">
+</head>
+
+<body>
+    <div class="principal">
+        <div class="logoEscuela">
+            <img src="./imagenes/ant.jpg" width="80%" />
+        </div>
+
+        <div class="contenido">
+            <div class="titulo">
+                PLACAS ECUADOR
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    Ingrese la placa
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtPlaca" />
+                </div>
+            </div>
+            
+            <div class="botones">
+                <div class="contenedorBoton">
+                    <input type="button" value="VALIDAR" class="estiloBoton" onclick="validarPlaca();" />
+                    <input type="button" value="LIMPIAR" class="estiloBoton" id="boton2" onclick="limpiar();" />
+                </div>
+            </div>
+            <div class="filaResultado">
+    <div class="etiqueta">Estructura de placa:</div>
+    <div id="lblResultado" class="valor"></div>
+</div>
+
+<div class="filaResultado">
+    <div class="etiqueta">La placa pertenece a la:</div>
+    <div id="lblProvincia" class="valor"></div>
+</div>
+
+<div class="filaResultado">
+    <div class="etiqueta">Tipo de vehiculo:</div>
+    <div id="lblTipoVehiculo" class="valor"></div>
+</div>
+
+<div class="filaResultado">
+    <div class="etiqueta">Dias de pico y placa:</div>
+    <div id="lblPicoYPlaca" class="valor"></div>
+</div>
+
+
+
+
+       
+        </div>
+    </div>
+</body>
+
+</html>

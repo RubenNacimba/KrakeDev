@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="orden.css" />
+    <script src="orden.js"></script>
+    <script src="utilitarios.js"></script>
+</head>
+
+<body onload="mostrarTablaPersonas();">
+    <div class="principal">
+        <div class="logoEscuela">
+            <img src="./imagenes/usuario.png" width="80%" />
+        </div>
+
+        <div class="contenido">
+            <div class="titulo">
+                Datos Persona
+            </div>
+
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    NOMBRE:
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNombre" />
+                    <div class="error" id="lblError1"></div>
+                </div>
+            </div>
+
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    EDAD:
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtEdad" />
+                    <div class="error" id="lblError2"></div>
+                </div>
+            </div>
+
+            <div class="botones">
+                <div class="contenedorBoton">
+                    <input type="button" value="GUARDAR" class="estiloBoton" onclick="agregarPersona();" />
+                    <input type="button" value="MAYOR" class="estiloBoton" onclick="determinarMayor();" />
+                    <input type="button" value="MENOR" class="estiloBoton" onclick="determinarMenor();" />
+                </div>
+            </div>
+            <div class="tablaPersonas" id="tablaPersonas"></div>
+            <div class="contenedorResultado">
+                <div id="lblResultado"></div>
+            </div>
+
+
+
+
+        </div>
+        <div class="areaResultado">
+            <div class="resultado">
+                <div>
+
+
+                </div>
+            </div>
+</body>
+
+</html>

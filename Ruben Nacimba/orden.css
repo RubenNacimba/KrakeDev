@@ -1,0 +1,176 @@
+body {
+    background-color: black;
+    background-size: cover;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.principal {
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.8);
+    margin-left: 0px;
+    margin-right: 0px;
+    flex-direction: row;
+    margin-top: 100px;
+
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logoEscuela {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.areaResultado {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.estiloBoton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+.estiloBoton:hover {
+    background-color: white;
+    color: #4CAF50;
+    border: 1px;
+    border-color: #4CAF50;
+    border-radius: 5px;
+}
+
+.estiloBoton:active {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contenedorBotones {
+    display: flex;
+    justify-content: flex-end; /* Alinea a la derecha */
+    gap: 10px;                 /* Espacio entre botones */
+    margin-top: 20px;
+    padding-right: 20px;       /* Separación del borde derecho */
+}
+
+
+.cajaTexto {
+    border-radius: 4px;
+    border-color: #4CAF50;
+
+    font-size: 20px;
+    color: rgb(85, 83, 83);
+}
+
+.ingresoDatos {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tituloCampo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px 0;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.resultado {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+
+}
+
+.error {
+    color: red;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.estiloTabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.estiloTabla th,
+.estiloTabla td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.estiloTabla th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.estiloTabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#lblResultado {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 18px;
+    width: fit-content;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+.contenedorResultado {
+    display: flex;
+    justify-content: center;
+}
