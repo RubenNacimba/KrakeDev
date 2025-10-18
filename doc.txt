@@ -1,0 +1,81 @@
+Formato tablas
+
+mostrarTablaPersonas = function(){
+    let tabla = "<table class='estiloTabla'>";
+    tabla += "<thead><tr><th>EDAD</th><th>Nombre</th></tr></thead>";
+    tabla += "<tbody>";
+
+    for (let i = 0; i < personas.length; i++) {
+        let persona = personas[i];
+        tabla += "<tr>";
+        tabla += "<td>" + persona.edad + "</td>";
+        tabla += "<td>" + persona.nombre + "</td>";
+        tabla += "</tr>";
+    }
+
+    tabla += "</tbody></table>";
+    mostrarTexto("tablaPersonas", tabla);
+};
+//agregar donde se va a mostrar
+mostrarTablaPersonas();
+
+
+Estilo tablas
+
+
+.estiloTabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.estiloTabla th,
+.estiloTabla td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.estiloTabla th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.estiloTabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.contenedorResultado {
+    display: flex;
+    justify-content: center;
+}
+#lblResultado {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 18px;
+    width: fit-content;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+Validaciones
+en roles.js
+password.js
+
+
+
+Estructura arreglos
+let personas =[
+    {nombre:"Marcos", edad:18},
+    {nombre:"Roberto", edad:15},
+    {nombre:"Kate", edad:25},
+    {nombre:"Diana", edad:12},
+    {nombre:"Benja", edad:5},
+];
+
+
